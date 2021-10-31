@@ -5,7 +5,6 @@ public class IntroSort
     {
         this.array = arrayToSort;
         int maxDepthLimit = (int)Math.floor(2 * Math.log(arrayToSort.length) / Math.log(2));
-        System.out.println(maxDepthLimit);
         sort(0, arrayToSort.length-1, maxDepthLimit);
     }
 

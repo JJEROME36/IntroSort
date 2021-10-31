@@ -5,7 +5,6 @@ public class InsertionSort
     private int end;
     public InsertionSort(int begin, int end, int[] array)
     {
-        System.out.println("insertion");
         this.array = array;
         this.begin = begin;
         this.end = end;

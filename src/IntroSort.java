@@ -1,6 +1,6 @@
 public class IntroSort
 {
-    public static int[] array;
+    private int[] array;
     public IntroSort(int[] arrayToSort)
     {
         this.array = arrayToSort;

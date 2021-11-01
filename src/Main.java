@@ -17,37 +17,20 @@ public class Main
             printingArray = false;
         }
 
-
-        int[] array = CreatRandomArray.creatArray(sizeOfArray);
+        int[] array = CreateRandomArray.createArray(sizeOfArray);
 
         long start = System.currentTimeMillis();
         IntroSort introSort = new IntroSort(array);
         long finish = System.currentTimeMillis();
 
         if(printingArray) printArray(array);
-        System.out.println("IntroSort time elapsed = " + (finish - start) + "ms");
 
         System.out.print("Do you wanna compare with other sorts (Y/N)? ");
         char inputIsCompare = input.next().charAt(0);
         if( inputIsCompare == 'y' || inputIsCompare == 'Y')
         {
-            array = CreatRandomArray.creatArray(sizeOfArray);
-            start = System.currentTimeMillis();
-            HeapSort heapSort = new HeapSort(0,sizeOfArray-1,array);
-            finish = System.currentTimeMillis();
-
-            if(printingArray) printArray(array);
-            System.out.println("HeapSort time elapsed = " + (finish - start) + "ms");
-
-            array = CreatRandomArray.creatArray(sizeOfArray);
-            start = System.currentTimeMillis();
-            InsertionSort insertionSort = new InsertionSort(0,sizeOfArray-1,array);
-            finish = System.currentTimeMillis();
-
-            if(printingArray) printArray(array);
-            System.out.println("InsertionSort time elapsed = " + (finish - start) + "ms");
+            SpeedTest.speedTest(3000);
         }
-
     }
 
     private static void printArray(int[] array)

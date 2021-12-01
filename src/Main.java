@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main
@@ -6,7 +7,7 @@ public class Main
     {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("How many elements: ");
+        System.out.print("How many elements in array: ");
         int sizeOfArray = input.nextInt();
 
         System.out.print("Do you wanna print sorted array (Y/N)? ");
@@ -29,7 +30,7 @@ public class Main
         if( inputIsCompare == 'y' || inputIsCompare == 'Y')
         {
             System.out.println("it can take some time...");
-            SpeedTest.speedTest(10000000,10);
+            SpeedTest.speedTest(100000,10);
         }
     }
 

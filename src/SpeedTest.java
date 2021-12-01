@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SpeedTest
 {
     public static void speedTest(int sizeOfArray, int sample)
@@ -65,7 +67,7 @@ public class SpeedTest
         }
 
         System.out.println();
-        System.out.println("InsertionSort on four threads time elapsed = " + timeElapsedIntroSortOnFourThreads/sample + "ms");
+        System.out.println("IntroSort on four threads time elapsed = " + timeElapsedIntroSortOnFourThreads/sample + "ms");
         System.out.println("IntroSort time elapsed = " + timeElapsedIntroSort/sample + "ms");
         System.out.println("HeapSort time elapsed = " + timeElapsedHeapSort/sample + "ms");
         System.out.println("InsertionSort time elapsed = " + timeElapsedInsertionSort/sample + "ms");
@@ -75,5 +77,6 @@ public class SpeedTest
     {
         System.out.print("\r" + "[" + currentSample + "/" + sample * numberOfAlgorithms + "]");
     }
+
 
 }

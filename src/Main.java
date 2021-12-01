@@ -11,6 +11,7 @@ public class Main
 
         System.out.print("Do you wanna print sorted array (Y/N)? ");
         boolean printingArray = true;
+
         char inputIsPrinted = input.next().charAt(0);
         if(inputIsPrinted == 'N' || inputIsPrinted == 'n')
         {
@@ -19,9 +20,7 @@ public class Main
 
         int[] array = CreateRandomArray.createArray(sizeOfArray);
 
-        long start = System.currentTimeMillis();
-        IntroSort introSort = new IntroSort(array);
-        long finish = System.currentTimeMillis();
+        IntroSortUsingThreads introSortUsingThreads = new IntroSortUsingThreads(array);
 
         if(printingArray) printArray(array);
 
@@ -29,7 +28,8 @@ public class Main
         char inputIsCompare = input.next().charAt(0);
         if( inputIsCompare == 'y' || inputIsCompare == 'Y')
         {
-            SpeedTest.speedTest(3000);
+            System.out.println("it can take some time...");
+            SpeedTest.speedTest(10000000,10);
         }
     }
 

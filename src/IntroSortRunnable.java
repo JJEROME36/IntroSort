@@ -1,11 +1,12 @@
-public class IntroSort
+public class IntroSortRunnable implements Runnable
 {
     private int[] array;
-    public IntroSort(int[] arrayToSort)
+    private int begin, end;
+    public IntroSortRunnable(int begin, int end, int[] arrayToSort)
     {
         this.array = arrayToSort;
-        int maxDepthLimit = (int)Math.floor(2 * Math.log(arrayToSort.length) / Math.log(2));
-        sort(0, arrayToSort.length-1, maxDepthLimit);
+        this.begin = begin;
+        this.end = end;
     }
 
     private void sort(int begin, int end, int maxDepthLimit)
@@ -27,7 +28,7 @@ public class IntroSort
 
             int splitIndex = calculateSplitIndex(begin,end);
 
-            sort(begin, splitIndex - 1,maxDepthLimit);
+            sort(begin, splitIndex - 1, maxDepthLimit);
             sort(splitIndex + 1, end, maxDepthLimit);
         }
         else
@@ -75,6 +76,7 @@ public class IntroSort
         swap(indexSmallerElement + 1, higherElement);
         return indexSmallerElement + 1;
     }
+
     private void swap(int a , int b)
     {
         int temp = array[a];
@@ -82,4 +84,11 @@ public class IntroSort
         array[b] = temp;
     }
 
+    @Override
+    public void run()
+    {
+        int size = end - begin;
+        int maxDepthLimit = (int)Math.floor(2 * Math.log(size) / Math.log(2));
+        sort(begin, end, maxDepthLimit);
+    }
 }

@@ -21,16 +21,25 @@ public class Main
 
         int[] array = CreateRandomArray.createArray(sizeOfArray);
 
-        IntroSortUsingThreads introSortUsingThreads = new IntroSortUsingThreads(array);
+        IntroSortUsingThreads introSortUsingThreads = new IntroSortUsingThreads(array,2);
 
         if(printingArray) printArray(array);
 
+        System.out.print("Do you wanna compare check scalability (Y/N)? ");
+        char inputAnswer = input.next().charAt(0);
+        if( inputAnswer == 'y' || inputAnswer == 'Y')
+        {
+            ScalabilityTest.scalabilityTest(3000000,10);
+            System.out.println();
+        }
+
         System.out.print("Do you wanna compare with other sorts (Y/N)? ");
-        char inputIsCompare = input.next().charAt(0);
-        if( inputIsCompare == 'y' || inputIsCompare == 'Y')
+        inputAnswer = input.next().charAt(0);
+        if( inputAnswer == 'y' || inputAnswer == 'Y')
         {
             System.out.println("it can take some time...");
             SpeedTest.speedTest(100000,10);
+            System.out.println();
         }
     }
 

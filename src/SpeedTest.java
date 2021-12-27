@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class SpeedTest
 {
     public static void speedTest(int sizeOfArray, int sample)
@@ -60,7 +58,7 @@ public class SpeedTest
             currentSamplePrint(currentSample,sample,numberOfAlgorithms);
 
             start = System.currentTimeMillis();
-            IntroSortUsingThreads introSortUsingThreads = new IntroSortUsingThreads(array.clone());
+            IntroSortUsingThreads introSortUsingThreads = new IntroSortUsingThreads(array.clone(),4);
             finish = System.currentTimeMillis();
             timeElapsedIntroSortOnFourThreads = timeElapsedIntroSortOnFourThreads + finish - start;
 
